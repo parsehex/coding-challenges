@@ -48,4 +48,30 @@ function update(id, prop, value) {
   return collection;
 }
 
+// Tests
 update(5439, "artist", "ABBA");
+collection[5439].should.have.property('artist')
+  .and.eql('ABBA');
+collection = collectionCopy; // reset collection
+
+update(5439, "tracks", "Take a Chance on Me");
+collection[5439].should.have.property('tracks')
+  .and.have.property(collection[5439].tracks.length - 1, 'Take a Chance on Me');
+collection = collectionCopy;
+
+update(2548, "artist", "");
+collection[2548].should.not.have.property('artist');
+collection = collectionCopy;
+
+update(1245, "tracks", "Addicted to Love");
+collection[1245].should.have.property('tracks')
+  .and.have.property(collection[1245].tracks.length - 1, 'Addicted to Love');
+collection = collectionCopy;
+
+update(2468, "tracks", "Free");
+collection[2468].should.have.property('tracks')
+  .and.have.property(0, '1999');
+collection = collectionCopy;
+
+update(2548, "tracks", "");
+collection[2548].should.not.have.property('tracks');
