@@ -1,3 +1,4 @@
+var should = should || require('should');
 // FreeCodeCamp: Counting Cards
 // https://www.freecodecamp.com/challenges/counting-cards
 

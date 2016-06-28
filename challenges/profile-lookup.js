@@ -1,3 +1,4 @@
+var should = should || require('should');
 // FreeCodeCamp: Profile lookUp
 // https://www.freecodecamp.com/challenges/profile-lookup
 

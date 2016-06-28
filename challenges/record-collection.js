@@ -1,3 +1,4 @@
+var should = should || require('should');
 // FreeCodeCamp: Record collection
 // https://www.freecodecamp.com/challenges/record-collection
 

@@ -1,0 +1,7 @@
+{
+  "name": "coding-challenges",
+  "version": "1.0.0",
+  "dependencies": {
+    "should": "^9.0.2"
+  }
+}

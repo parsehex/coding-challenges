@@ -1,3 +1,4 @@
+var should = should || require('should');
 // FreeCodeCamp: Golf code
 // https://www.freecodecamp.com/challenges/golf-code
 
