@@ -40,6 +40,7 @@ function update(id, prop, value) {
   if (value !== '' && prop !== 'tracks') {
     collection[id][prop] = value;
   } else if (value !== '') {
+    collection[id].tracks = collection[id].tracks || [];
     collection[id].tracks.push(value);
   } else if (value === '') {
     delete collection[id][prop];
