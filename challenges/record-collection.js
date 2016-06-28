@@ -1,13 +1,5 @@
-/*  Description
-    You are given a JSON object representing (a small part of) your record collection. Each album is identified by a unique id number (its key) and has several properties. Not all albums have complete information.
-    Write a function which takes an id, a property (prop), and a value.
-    For the given id in collection:
-      If prop does not contain the key "tracks", then update or set the value for that incomplete prop.
-      If prop does not contain the key "tracks" before you update it, create an empty array before pushing a track to it.
-      If prop does contain the key "tracks" and its value is non-blank, then push the value onto the end of its existing tracks array.
-      If value is blank, delete that prop.
-    Always return the entire collection object.
- */
+// FreeCodeCamp: Record collection
+// https://www.freecodecamp.com/challenges/record-collection
 
 var collection = {
     2548: {
