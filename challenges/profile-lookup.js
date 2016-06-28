@@ -44,4 +44,13 @@ function lookUp(firstName, prop){
   return 'No such contact';
 }
 
-lookUp("Akira", "likes");
+// Tests
+lookUp("Kristian", "lastName").should.equal('Vos');
+
+lookUp("Sherlock", "likes").should.eql(["Intriguing Cases", "Violin"]);
+
+lookUp("Harry", "likes").should.be.an.Array();
+
+lookUp("Bob", "number").should.equal('No such contact');
+
+lookUp("Akira", "address").should.equal('No such property');
