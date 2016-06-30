@@ -3,20 +3,35 @@ var should = should || require('should');
 // https://www.freecodecamp.com/challenges/spinal-tap-case
 
 function spinalCase(str) {
-  if(str.match(/ |_/) === null) {
-    var newStr = '';
-    for(var i = 0; i < str.length; i++) {
-      if(str[i] !== str[i].toUpperCase()) {
-        newStr += str[i];
-      } else {
-        newStr += ' ' + str[i];
-      }
+  var newStr = [];
+  for(var i = 0; i < str.length; i++) {
+    if(i === 0) {
+      // first character
+      newStr.push(str[i].toLowerCase());
+      continue;
     }
-    str = newStr;
+    var code = str.charCodeAt(i);
+    if(code >= 65 && code <= 90) {
+      // charcter is uppercase (charcodes 65-90 are uppercase)
+      if(newStr[newStr.length - 1].match(/ |-|_/) === null) {
+        newStr.push('-');
+      }
+      newStr.push(str[i].toLowerCase());
+      continue;
+    }
+    if(code >= 97 && code <= 122) {
+      // character is lowercase (charcodes (97-122 are lowercase))
+      newStr.push(str[i]);
+      continue;
+    }
+    if(str[i].match(/ |-|_/) !== null) {
+      // character is a space, hyphen, or underscore
+      newStr.push('-');
+      continue;
+    }
   }
-  str = str.toLowerCase();
-  str = str.replace(/ |_/g, '-');
-  return  str;
+
+  return newStr.join('');
 }
 
 // Tests
