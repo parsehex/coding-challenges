@@ -27,6 +27,7 @@ function perm(str) {
 }
 function permAlone(str) {
 	var perms = perm(str);
+  if(typeof perms !== 'object') perms = [perms];
 	perms = perms.filter(function(cur) {
 		return cur.match(/([\w\d])\1+/) === null;
 	});
